@@ -19,7 +19,6 @@ public class OrderItemPk implements Serializable {
 
     @ManyToOne
     @JoinColumn(name= "product_id")
-  
     private Product product;
 
     public Order getOrder() {
