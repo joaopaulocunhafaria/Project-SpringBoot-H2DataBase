@@ -15,6 +15,7 @@ import org.springframework.web.servlet.support.ServletUriComponentsBuilder;
 import com.example.demo.entites.User;
 import com.example.demo.services.UserService;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 
 @RestController
@@ -49,4 +50,13 @@ public class UserResource {
 		service.delete(id);
 	    return ResponseEntity.noContent().build();
 	}
+ 
+    @PutMapping(value = "/{id}")
+    public ResponseEntity<User> updateDate(@RequestBody User obj, @PathVariable Long id) {
+		obj = service.update(id, obj);
+		return ResponseEntity.ok().body(obj);
+    }
+    
+
 }
+

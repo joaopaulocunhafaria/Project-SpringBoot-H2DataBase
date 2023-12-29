@@ -24,11 +24,23 @@ public class UserService {
 		return obj.get();
 	}
 
-	public User insert(User obj){
+	public User insert(User obj) {
 		return repository.save(obj);
 	}
 
-	public void delete(Long id){
+	public void delete(Long id) {
 		repository.deleteById(id);
+	}
+
+	public User update(Long id, User obj) {
+		User entity = repository.getReferenceById(id);
+		updateUser(entity, obj);
+        return repository.save(entity);
+	}
+
+	private void updateUser(User entity, User obj) {
+		entity.setEmail(obj.getEmail());
+		entity.setName(obj.getName());
+		entity.setPhone(obj.getPhone());
 	}
 }
