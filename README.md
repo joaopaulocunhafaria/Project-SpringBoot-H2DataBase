@@ -13,4 +13,6 @@ Technologies
  -  **MySQL:** The chosen relational database management system for storing and retrieving
    data related to user orders, products, and other entities.
 
+-  **H2 DataBase:** Relational database used to test the application.
+
   - **Maven:** The project management and build tool used for handling dependencies, building the project, and managing its lifecycle.
